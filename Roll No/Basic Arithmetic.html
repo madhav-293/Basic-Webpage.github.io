@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            color: blue;
+        }
+        button{
+            margin: 8px;
+            padding: 5px;
+            /* padding-bottom: px; */
+            /* padding-left: 3px; */
+            /* padding-right: 3px; */
+        }
+        input:hover ,button:hover{
+            background-color:darkgray;
+        }
+    </style>
+    <script>
+        function mul(){
+            var a= document.getElementById("fun").value;
+            var b= document.getElementById("rollno").textContent;
+            document.getElementById("rollno").innerHTML=a*b;
+            // document.write(a*b);
+        }
+        function add(){
+            var a= document.getElementById("fun").value;
+            var b= document.getElementById("rollno").textContent;
+            //document.write(parseInt(a)+parseInt(b));
+            document.getElementById("rollno").innerHTML=parseInt(a)+parseInt(b);
+        }
+        function col(){
+            var c=document.getElementById("fun").value;
+            document.getElementById("rollno").style.color=c;
+            document.getElementById("col1").style.color=c;
+
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center;padding: 10%;margin-top:10%;border: 1px solid black;background-color: antiquewhite;">
+    <span class="color" id="col1">Roll no.</span>
+    <Span class="color" id="rollno">47</Span>
+    <br>
+    <br>
+    <input type="text" id="fun" style="border: 2px solid black;">
+    <br>
+    <br>
+    <button id="chcolor" onclick="col()">Change Color</button>
+    
+    <button id="add" onclick="add()">Addition</button>
+    <button id="mul" onclick="mul()">Multiplication</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 3%;
+            padding: 1%;
+        }
+        input:hover{
+            background-color:darkgray;
+        }
+        .error{
+            color: green;
+        }
+        .error1{
+            color: red;
+        }
+    </style>
+    <script>
+        function valMob(){
+            var n=document.getElementById("num").value;
+            var a=/^[0]?[56]\d{9}$/;
+           // var b=new RegExp(a);
+            if(a.test(n)){
+                document.getElementById("ans").innerHTML="<span class='error'>Valid</span>";
+            }
+            else{
+                document.getElementById("ans").innerHTML="<span class='error1'>Invalid</span>";
+                // document.write("false");
+            }
+        }
+        function debCard(){
+            var n=document.getElementById("num").value;
+            var a=/^([1-9]\d{15})$/;
+            if(a.test(n)){
+                document.getElementById("ans").innerHTML="<span class='error'>Valid</span>";
+            }
+            else{
+                document.getElementById("ans").innerHTML="<span class='error1'>Invalid</span>";
+
+        }
+    }
+        function emailCheck(){
+            let n = document.getElementById("num").value;
+            var a=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail.com*$/;
+            if(a.test(n)){
+                document.getElementById("ans").innerHTML="<span class='error'>Valid</span>";
+            }
+            else{
+                document.getElementById("ans").innerHTML="<span class='error1'>Invalid</span>";
+        }
+    }
+        function vowelCheck(){
+            let n = document.getElementById("num").value;
+            document.getElementById("ans").innerHTML= n.match(/[aeiou]/ig, '');
+        }
+        function consCheck(){
+            let n = document.getElementById("num").value;
+            document.getElementById("ans").innerHTML= n.match(/[^aeiou]/gi, '');
+        }
+        function fsfinder(){
+            let n = document.getElementById("num").value;
+            if(n.match(/fullstack/)){
+                document.getElementById("ans").innerHTML=" Present";
+            }
+            else{
+                document.getElementById("ans").innerHTML="Not Present";
+            }
+        }
+    </script>
+
+</head>
+<body style="background-color:antiquewhite ;">
+    <div style="text-align: center;margin: 10%;">
+        <span>Enter Mob no. / Debit Card no. /Email /String</span>
+        <input type="text" id="num" >
+        <span id="ans"></span>
+        <br>
+        <span>To check Mob no. : </span><input type="button" value="Submit" id="sub" onclick="valMob()">
+        <br>
+        <span>To check Debit Card no. : </span><input type="button" name="" id="dub" onclick="debCard()" value="Submit">
+        <br>
+        <span>To check Email : </span><input type="button" name="" id="eub" value="Submit" onclick="emailCheck()">
+        <br>
+        <span>To check Vowels : </span><input type="button" id="vub" value="Submit" onclick="vowelCheck()">
+        <br>
+        <span>To check Consonants : </span><input type="button" id="cub" value="Submit" onclick="consCheck()">
+        <br>
+        <span>To check fullstack in String : </span><input type="button" id="fub" value="Submit" onclick="fsfinder()">
+    </div>
+</body>
+</html>
